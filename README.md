@@ -37,3 +37,18 @@ public static IHtmlString InlineSvg(this HtmlHelper helper, string fileName)
 
 http://hqwebdev.com/blog/inlining-svg-files-in-asp-net/
 ```
+### NODE - Express
+
+```
+fs.readFile("./index.html", function(err, html) {
+  if (err) {
+    throw err;
+  }
+  var path = "./";
+  app.get("/", function(req, res) {
+    res.writeHeader(200, { "Content-Type": "text/html" });
+    res.write(html);
+    res.end();
+  });
+});
+```
